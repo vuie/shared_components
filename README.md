@@ -10,7 +10,7 @@ Prerequisites
 * Install [Vagrant](https://www.vagrantup.com/downloads.html).
 * Install [Proxy Configuration Plugin for Vagrant](http://tmatilai.github.io/vagrant-proxyconf/).
 
-    vagrant plugin install vagrant-proxyconf
+        vagrant plugin install vagrant-proxyconf
 
 
 Usage
@@ -19,19 +19,19 @@ Usage
 Personal Environment Setup (post `vagrant up`)
 ----------------------------------------------
 
-    # login to our internal npm registry (@TODO why???)
-    # username and password can be the same, should use your corporate credentials
-    @TODO get command
+        # login to our internal npm registry (@TODO why???)
+        # username and password can be the same, should use your corporate credentials
+        @TODO get command
 
-    # create your ssh key so you can clone our Stash-hosted git projects
-    ssh-keygen -t rsa -C "{{corporate email}}"
+        # create your ssh key so you can clone our Stash-hosted git projects
+        ssh-keygen -t rsa -C "{{corporate email}}"
 
-    # add this key to Stash; navigate to @TODO at stash link
+        # add this key to Stash; navigate to @TODO at stash link
 
-    # clone the appropriate repository
-    mkdir /vagrant/repos && cd $_
-    git clone {{repo ssh url}}
+        # clone the appropriate repository
+        mkdir /vagrant/repos && cd $_
+        git clone {{repo ssh url}}
 
-    # initialize and build
-    npm install .
+        # initialize and build
+        npm install .
 
