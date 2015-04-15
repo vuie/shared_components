@@ -1,3 +1,6 @@
+include:
+  - env.ruby.versions
+
 sass:
   gem.installed:
     - require:

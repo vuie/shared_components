@@ -1,2 +1,2 @@
-git:
-  pkg.installed
+include:
+  - vcs.git

@@ -1,2 +1,4 @@
 .DS_Store
 .vagrant
+repos
+salt/roots/salt/env/maven/files/

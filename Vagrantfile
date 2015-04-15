@@ -17,22 +17,31 @@ Vagrant.configure(2) do |config|
     config.proxy.no_proxy = ENV['no_proxy']
   end
 
-  ## for masterless, mount your salt file root
+  # consumer-app
+  config.vm.network "forwarded_port", guest: 8000, host: 8080
+
+  # for masterless, mount your salt file root
   config.vm.synced_folder "salt/roots/", "/srv/"
 
-  ## salt configuration
+  # more power!
+  config.vm.provider "virtualbox" do |v|
+    v.memory = 4096
+    v.cpus = 4
+  end
+
+  # salt configuration
   config.vm.provision :salt do |salt|
 
-    ## path to minion config file
+    # path to minion config file
     salt.minion_config = "salt/minion"
 
-    ## let's get this party started
+    # let's get this party started
     salt.run_highstate = true
 
-    ## pretty...
+    # pretty...
     salt.colorize = true
 
-    ## logging
+    # logging
     salt.log_level = "warning" # (all|debug|garbage|info|trace|warning)
 
   end
